@@ -13,10 +13,13 @@ $submitButton.on("click", function() {
   const $rating = $(".rating").val();
   let $removeButton = $("<button>");
 
-  //add a class and text to remove button
+  //add a class, text, and event listener to remove $movie` to remove button
   $removeButton
   .addClass("removeBtn")
-  .text("Remove Movie");
+  .text("Remove Movie")
+  .on("click", () =>{
+    $movie.remove();
+  })
 
   //create a div to append each title/rating/button to and append to the display area
   const $movie = $("<div>");
@@ -34,13 +37,4 @@ $submitButton.on("click", function() {
 
   console.log($display)
 });
-
-//add event listener to each remove button that will be generated
-$display
-.on("click", (evt) => {
-  console.log("remove clicked");
-
-  //remove parent node when clicked(parentNode = $movie div)
-  evt.target.parentNode.remove();
-})
 
