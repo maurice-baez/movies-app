@@ -9,8 +9,8 @@ $submitButton.on("click", function() {
   console.log("clicked");
 
   //grab title and rating input value from form and crete a remove button
-  const $title = $(".title").val();
-  const $rating = $(".rating").val();
+  const title = $(".title").val();
+  const rating = $(".rating").val();
   let $removeButton = $("<button>");
 
   //add a class, text, and event listener to remove $movie` to remove button
@@ -26,7 +26,7 @@ $submitButton.on("click", function() {
 
   //append info to $movie div
   $movie
-  .append(`${$title} has a rating of ${$rating}   `, $removeButton);
+  .append(`${title} has a rating of ${rating}   `, $removeButton);
 
   //append $movie div to $display
   $display
